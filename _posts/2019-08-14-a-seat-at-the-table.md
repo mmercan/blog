@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/14/a-seat-at-the-table/
+  https://mmercan.azurewebsites.net/2019/08/14/a-seat-at-the-table/
 published: true
 post_date: 2019-08-14 13:51:56
 ---
