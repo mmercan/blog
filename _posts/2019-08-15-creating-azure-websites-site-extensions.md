@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -58,8 +58,40 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p></p>
+<p>Firstly I am using  ASP.NET Core  2.2 but you can write your extension with ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. </p>
 <!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
+<pre class="wp-block-syntaxhighlighter-code">$artifactsFolderName = "artifacts"
+$extensionFolderName = "extension"
+$outputsFolderName = "outputs"
+$projectFolderName = "HealthCheck"
+Write-Host "--------------------------------"
+$scriptpath = $MyInvocation.MyCommand.Path 
+$dir = Split-Path $scriptpath
+
+$appFolder = Join-Path -Path $dir -ChildPath .\$extensionFolderName\$projectFolderName
+$testFolder = Join-Path -Path $dir -ChildPath .\$extensionFolderName\$projectFolderName".Tests"
+$artifactsFolder = Join-Path -Path $dir -ChildPath .\$artifactsFolderName
+$outputsFolder = Join-Path -Path $dir -ChildPath .\$outputsFolderName
+
+#Create Folder Structure 
+new-item -type directory -path $appFolder -Force
+new-item -type directory -path $testFolder -Force
+new-item -type directory -path $artifactsFolder -Force
+new-item -type directory -path $outputsFolder -Force
+
+set-location -Path $appFolder
+dotnet new mvc
+
+set-location -Path $testFolder
+dotnet new xunit
+
+set-location -Path $dir
+dotnet new sln
+dotnet sln add $appFolder
+dotnet sln add $testFolder</pre>
+<!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:heading {"level":4} -->
 <h4>  How to Host it anywhere other than Nuget feeds </h4>
