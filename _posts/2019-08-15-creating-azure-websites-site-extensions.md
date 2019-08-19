@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -64,6 +64,10 @@ What is Site Extensions
 <!-- wp:heading {"level":4} -->
 <h4>  How to Host it anywhere other than Nuget feeds </h4>
 <!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p><br><br><code>SCM_SITEEXTENSIONS_FEED_URL=https://www.nuget.org/api/v2/</code><br><br></p>
+<!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p></p>
