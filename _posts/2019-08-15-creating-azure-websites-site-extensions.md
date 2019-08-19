@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -30,11 +30,27 @@ Who is this for
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>
+<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps </p>
+<!-- /wp:paragraph -->
 
-Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources) add Diagnostic and Monitoring to their Azure Web apps
+<!-- wp:heading {"level":4} -->
+<h4>  When Should I create a new Site Extension</h4>
+<!-- /wp:heading -->
 
-</p>
+<!-- wp:paragraph -->
+<p>Before create a new site extension, there are already a wide range of extensions available and you can see them from your the azure portal or Kudu's extension page. You can just install and use them (Click your web app in azure portal and select extension on menu or Go Kudu and click Extension button on the right top corner), <br><a href="https://www.siteextensions.net/packages">https://www.siteextensions.net/packages</a> is outdated.<br><em>As those Extension haven't been validated on their behaviors (Extensions uses Nuget Servers as a repository and , you are taking risk on installing them to your environment as they may have malicious can access everything your web app can access.</em></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":457,"width":531,"height":459} -->
+<figure class="wp-block-image is-resized"><img src="/wp-content/uploads/2019/08/Site-Extensions-img-1.jpg" alt="" class="wp-image-457" width="531" height="459"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p> </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Where Can I find the existed ones</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
