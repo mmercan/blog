@@ -22,11 +22,11 @@ What is Site Extensions
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":4} -->
-<h4> Who is this for and   Why Should I use Site Extensions </h4>
+<h4> Who is this for and  Why Should I use Site Extensions </h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension  to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggrigator <br>Running Health-checks on demands and in a scheduled intervals and Showing them in a dashboard</p>
+<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension&nbsp; to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggrigator <br>Running Health-checks on demands and in a scheduled intervals and Showing them in a dashboard</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":462} -->
@@ -50,21 +50,21 @@ What is Site Extensions
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Who<br> What<br> When<br> Where<br> Why<br> How</p>
+<p> How</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p>
-
-If you ever use Kudu on Azure web apps, you already use site extensions. Site extensions are web apps with a metadata file for registration, if you can deploy your code as a web app to azure you can deploy as an extension too.
-
-</p>
-<!-- /wp:paragraph -->
+<!-- wp:heading {"level":4} -->
+<h4>  How to Create a new Site Extensions </h4>
+<!-- /wp:heading -->
 
 <!-- wp:paragraph -->
 <p></p>
 <!-- /wp:paragraph -->
 
+<!-- wp:heading {"level":4} -->
+<h4>  How to Host it anywhere other than Nuget feeds </h4>
+<!-- /wp:heading -->
+
 <!-- wp:paragraph -->
-<p>. can help us to automate, monitor or diagnose azure web apps.<br>Site Extensions are </p>
+<p></p>
 <!-- /wp:paragraph -->
