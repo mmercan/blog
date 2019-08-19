@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -26,7 +26,7 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension  to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br><br>Running Health-checks on demands and in a scheduled intervals and Showing them in a dashboard</p>
+<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension  to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggregation Extension check the logs and report anything important.<br>Running Health-checks on demands and in a scheduled intervals and Showing them in a dashboard.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":462} -->
@@ -45,26 +45,22 @@ What is Site Extensions
 <ul class="wp-block-gallery columns-2 is-cropped"><li class="blocks-gallery-item"><figure><img src="/wp-content/uploads/2019/08/Site-Extensions-img-1.jpg" alt="" data-id="457" class="wp-image-457"/></figure></li><li class="blocks-gallery-item"><figure><img src="/wp-content/uploads/2019/08/Site-Extensions-img-2.jpg" alt="" data-id="459" data-link="https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/site-extensions-img-2/" class="wp-image-459"/></figure></li></ul>
 <!-- /wp:gallery -->
 
-<!-- wp:paragraph -->
-<p> </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>Who<br> What<br> When<br> Where<br> Why<br> How</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p>
-
-If you ever use Kudu on Azure web apps, you already use site extensions. Site extensions are web apps with a metadata file for registration, if you can deploy your code as a web app to azure you can deploy as an extension too.
-
-</p>
-<!-- /wp:paragraph -->
+<!-- wp:heading {"level":4} -->
+<h4>How Can I create a Custom Site Extensions</h4>
+<!-- /wp:heading -->
 
 <!-- wp:paragraph -->
 <p></p>
 <!-- /wp:paragraph -->
 
+<!-- wp:heading {"level":4} -->
+<h4>How Can I Host it anywhere other than Nuget </h4>
+<!-- /wp:heading -->
+
 <!-- wp:paragraph -->
-<p>. can help us to automate, monitor or diagnose azure web apps.<br>Site Extensions are </p>
+<p>
+
+SCM_SITEEXTENSIONS_FEED_URL
+
+</p>
 <!-- /wp:paragraph -->
