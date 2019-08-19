@@ -1,6 +1,6 @@
 ---
 ID: 392
-post_title: 'Creating Azure WebSites &#8211; Site Extensions'
+post_title: Creating Azure WebSites Site Extensions
 author: mmercan
 post_excerpt: ""
 layout: post
