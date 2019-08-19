@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -45,52 +45,86 @@ What is Site Extensions
 <ul class="wp-block-gallery columns-2 is-cropped"><li class="blocks-gallery-item"><figure><img src="/wp-content/uploads/2019/08/Site-Extensions-img-1.jpg" alt="" data-id="457" class="wp-image-457"/></figure></li><li class="blocks-gallery-item"><figure><img src="/wp-content/uploads/2019/08/Site-Extensions-img-2.jpg" alt="" data-id="459" data-link="https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/site-extensions-img-2/" class="wp-image-459"/></figure></li></ul>
 <!-- /wp:gallery -->
 
-<!-- wp:paragraph -->
-<p> </p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p> How</p>
-<!-- /wp:paragraph -->
-
 <!-- wp:heading {"level":4} -->
 <h4>  How to Create a new Site Extensions </h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Firstly I am using  ASP.NET Core  2.2 but you can write your extension with ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. </p>
+<p>Firstly I am using  ASP.NET Core  2.2 but you can write your extension with ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. <br><br>I already Created a Github Repo you can clone from <a href="https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions">https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions</a> <br>if you want to follow along  run <a href="https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions/blob/master/createWebApp.ps1">https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions/blob/master/createWebApp.ps1</a> in the main folder you want to create your project</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>Create applicationHost.xdt file in the main folder and copy the XML below.<br>Path I want to access to the extension is <strong>/healthcheck</strong>, it will be different for your extension. just change  <strong>/healthcheck</strong>  to path you desire in the save it.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code {"language":"xml","makeURLsClickable":false} -->
+<pre class="wp-block-syntaxhighlighter-code">&lt;?xml version="1.0"?>
+&lt;configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  &lt;system.applicationHost>
+    &lt;sites>
+      &lt;site name="%XDT_SCMSITENAME%" xdt:Locator="Match(name)">
+        &lt;application path="/healthcheck" xdt:Locator="Match(path)" xdt:Transform="Remove" />
+        &lt;application path="/healthcheck" preloadEnabled="%XDT_PRELOADENABLED%" xdt:Transform="Insert">
+          &lt;virtualDirectory path="/" physicalPath="%XDT_EXTENSIONPATH%" />
+        &lt;/application>
+      &lt;/site>
+    &lt;/sites>
+  &lt;/system.applicationHost>
+&lt;/configuration></pre>
+<!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:paragraph -->
+<p>  Create HealthCheck.nuspec  file in the main folder and copy the XML below.  <br>if you ever worked with nuspec file this is just a regular Nuget  package metadata except <br><strong> &lt;packageType name="AzureSiteExtension" /></strong> which defined this package as an AzureSiteExtension<br>if you want to more about  package metadata  <a href="https://docs.microsoft.com/en-us/nuget/reference/nuspec">https://docs.microsoft.com/en-us/nuget/reference/nuspec</a> </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code {"language":"xml","makeURLsClickable":false} -->
+<pre class="wp-block-syntaxhighlighter-code">&lt;?xml version="1.0"?>
+&lt;package >
+  &lt;metadata>
+    &lt;id>healthvheckerv2&lt;/id>
+    &lt;title>Health Checker V2&lt;/title>
+    &lt;version>1.0.1&lt;/version>
+    &lt;authors>Matt Mercan&lt;/authors>
+    &lt;licenseUrl>http://opensource.org/licenses/Apache-2.0&lt;/licenseUrl>
+    &lt;projectUrl>https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions&lt;/projectUrl>
+    &lt;requireLicenseAcceptance>false&lt;/requireLicenseAcceptance>
+    &lt;description>A tool to check the application health&lt;/description>
+    &lt;iconUrl>https://raw.githubusercontent.com/projectkudu/AzureSiteReplicator/master/AzureSiteReplicator/Content/WebsiteReplicator50x50.png&lt;/iconUrl>
+    &lt;tags>AzureSiteExtension&lt;/tags>
+    &lt;packageTypes>
+      &lt;packageType name="AzureSiteExtension" />
+    &lt;/packageTypes>
+  &lt;/metadata>
+  &lt;files>
+    &lt;file src="artifacts\**\*.*" target="content" />
+  &lt;/files>
+&lt;/package></pre>
+<!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:paragraph -->
+<p> Create publish.ps1 file in the main folder and copy the script below. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
-<pre class="wp-block-syntaxhighlighter-code">$artifactsFolderName = "artifacts"
-$extensionFolderName = "extension"
-$outputsFolderName = "outputs"
-$projectFolderName = "HealthCheck"
-Write-Host "--------------------------------"
+<pre class="wp-block-syntaxhighlighter-code">$aspnetfolderPath = "extension\HealthCheck"
 $scriptpath = $MyInvocation.MyCommand.Path 
-$dir = Split-Path $scriptpath
+$dir = Split-Path $scriptpath 
 
-$appFolder = Join-Path -Path $dir -ChildPath .\$extensionFolderName\$projectFolderName
-$testFolder = Join-Path -Path $dir -ChildPath .\$extensionFolderName\$projectFolderName".Tests"
-$artifactsFolder = Join-Path -Path $dir -ChildPath .\$artifactsFolderName
-$outputsFolder = Join-Path -Path $dir -ChildPath .\$outputsFolderName
+$aspnetfolder = $dir + "\" + $aspnetfolderPath
+$aspnetfolder
 
-#Create Folder Structure 
-new-item -type directory -path $appFolder -Force
-new-item -type directory -path $testFolder -Force
-new-item -type directory -path $artifactsFolder -Force
-new-item -type directory -path $outputsFolder -Force
+Set-Location -Path $aspnetfolder
+dotnet publish --output ../../artifacts/ -f netcoreapp2.2 -c Release
 
-set-location -Path $appFolder
-dotnet new mvc
+Set-Location -Path $dir
+./nuget pack -NoPackageAnalysis
+$nupkgfilename = @(Get-Childitem -Include HealthCheck* -exclude *.nuspec)[0].Name
+$nupkgfilename
 
-set-location -Path $testFolder
-dotnet new xunit
+dotnet nuget push $nupkgfilename -k [Insert-your-NugetKey-Here] -s https://www.myget.org/F/mmercan/api/v3/index.json
 
-set-location -Path $dir
-dotnet new sln
-dotnet sln add $appFolder
-dotnet sln add $testFolder</pre>
+Move-Item HealthCheck*.nupkg ./outputs -Force
+Set-Location -Path $dir</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:heading {"level":4} -->
@@ -98,7 +132,7 @@ dotnet sln add $testFolder</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><br><br><code>SCM_SITEEXTENSIONS_FEED_URL=https://www.nuget.org/api/v2/</code><br><br></p>
+<p><br><code>SCM_SITEEXTENSIONS_FEED_URL=https://www.nuget.org/api/v2/</code><br></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
