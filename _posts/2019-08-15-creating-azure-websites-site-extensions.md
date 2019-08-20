@@ -74,7 +74,7 @@ What is Site Extensions
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>  Create HealthCheck.nuspec  file in the main folder and copy the XML below.  <br>if you ever worked with nuspec file this is just a regular Nuget  package metadata except <br><strong> &lt;packageType name="AzureSiteExtension" /></strong> which defined this package as an AzureSiteExtension<br>if you want to more about  package metadata  <a href="https://docs.microsoft.com/en-us/nuget/reference/nuspec">https://docs.microsoft.com/en-us/nuget/reference/nuspec</a> </p>
+<p>  Create HealthCheck.nuspec  file in the main folder and copy the XML below.  <br>if you ever worked with nuspec file this is just a regular Nuget  package metadata except <br><strong> &lt;packageType name="AzureSiteExtension" /&gt;</strong> which defined this package as an AzureSiteExtension<br>if you want to more about  package metadata  <a href="https://docs.microsoft.com/en-us/nuget/reference/nuspec">https://docs.microsoft.com/en-us/nuget/reference/nuspec</a> </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"xml","makeURLsClickable":false} -->
@@ -102,7 +102,7 @@ What is Site Extensions
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p> Create publish.ps1 file in the main folder and copy the script below. </p>
+<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to  artifacts folder too. it will create a nuget package from artifacts folder in the root folder and push it to the nuget feed.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
@@ -115,17 +115,22 @@ $aspnetfolder
 
 Set-Location -Path $aspnetfolder
 dotnet publish --output ../../artifacts/ -f netcoreapp2.2 -c Release
+Copy-Item "$dir/applicationHost.xdt" ../../artifacts/
 
 Set-Location -Path $dir
 ./nuget pack -NoPackageAnalysis
-$nupkgfilename = @(Get-Childitem -Include HealthCheck* -exclude *.nuspec)[0].Name
-$nupkgfilename
+$nupkgfilename = @(Get-Childitem -path ./* -Include health* -exclude *.nuspec)[0].Name
+"file found : $nupkgfilename"
 
-dotnet nuget push $nupkgfilename -k [Insert-your-NugetKey-Here] -s https://www.myget.org/F/mmercan/api/v3/index.json
+dotnet nuget push $nupkgfilename -k $env:NugetKey -s https://api.nuget.org/v3/index.json
 
-Move-Item HealthCheck*.nupkg ./outputs -Force
+Move-Item health*.nupkg ./outputs -Force
 Set-Location -Path $dir</pre>
 <!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:image {"id":484} -->
+<figure class="wp-block-image"><img src="/wp-content/uploads/2019/08/Site-Extensions-img-4.jpg" alt="" class="wp-image-484"/></figure>
+<!-- /wp:image -->
 
 <!-- wp:heading {"level":4} -->
 <h4>  How to Host it anywhere other than Nuget feeds </h4>
