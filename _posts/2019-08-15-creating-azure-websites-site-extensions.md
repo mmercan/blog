@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -102,7 +102,7 @@ What is Site Extensions
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to  artifacts folder too. it will create a nuget package from artifacts folder in the root folder and push it to the nuget feed.</p>
+<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to  artifacts folder too. it will create a nuget package from artifacts folder in the root folder and push it to the nuget feed.<br>when you open the azure portal and check the extension on your azure web app you can see the extension is there now.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
@@ -122,7 +122,7 @@ Set-Location -Path $dir
 $nupkgfilename = @(Get-Childitem -path ./* -Include health* -exclude *.nuspec)[0].Name
 "file found : $nupkgfilename"
 
-dotnet nuget push $nupkgfilename -k $env:NugetKey -s https://api.nuget.org/v3/index.json
+dotnet nuget push $nupkgfilename -k [Your_Nuget_Key] -s https://api.nuget.org/v3/index.json
 
 Move-Item health*.nupkg ./outputs -Force
 Set-Location -Path $dir</pre>
@@ -133,13 +133,17 @@ Set-Location -Path $dir</pre>
 <!-- /wp:image -->
 
 <!-- wp:heading {"level":4} -->
+<h4>What Can we do with the Site Extensions</h4>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph -->
+<p>What we deploy is just an empty mvc application.<br>We can use Controllers to interact with users or We can use IHostedService for Background tasks or  Scheduled Tasks</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:heading {"level":4} -->
 <h4>  How to Host it anywhere other than Nuget feeds </h4>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><br><code>SCM_SITEEXTENSIONS_FEED_URL=https://www.nuget.org/api/v2/</code><br></p>
-<!-- /wp:paragraph -->
-
-<!-- wp:paragraph -->
-<p></p>
+<p>in some cases you don't want to  clutter the nuget feed and seperate our extensions from nuget feeds.<br>just replace your dotnet nuget push lane with <br> <strong>dotnet nuget push $nupkgfilename -k [your_myget_key] -s https://www.myget.org/F/[your_user_name]/api/v3/index.json </strong><br> <br><code>SCM_SITEEXTENSIONS_FEED_URL=</code> https://www.myget.org/F/[your_user_name]/api/v3/index.json  <br></p>
 <!-- /wp:paragraph -->
