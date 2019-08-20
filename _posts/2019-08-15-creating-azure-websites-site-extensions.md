@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -145,5 +145,21 @@ Set-Location -Path $dir</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>in some cases you don't want to  clutter the nuget feed and seperate our extensions from nuget feeds.<br>just replace your dotnet nuget push lane with <br> <strong>dotnet nuget push $nupkgfilename -k [your_myget_key] -s https://www.myget.org/F/[your_user_name]/api/v3/index.json </strong><br> <br><code>SCM_SITEEXTENSIONS_FEED_URL=</code> https://www.myget.org/F/[your_user_name]/api/v3/index.json  <br></p>
+<p>in some cases you don't want to  clutter the nuget feed and seperate our extensions.<br>just replace your dotnet nuget push lane with </p>
 <!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
+<pre class="wp-block-syntaxhighlighter-code"> dotnet nuget push $nupkgfilename -k [your_myget_key] -s https://www.myget.org/F/[your_user_name]/api/v3/index.json </pre>
+<!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:paragraph -->
+<p>and Add  SCM_SITEEXTENSIONS_FEED_URL  to your Web Apps Configuration and set it to your myget (or any other public nuget) feed</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p><code>SCM_SITEEXTENSIONS_FEED_URL=</code> https://www.myget.org/F/[your_user_name]/api/v3/index.json   <br></p>
+<!-- /wp:paragraph -->
+
+<!-- wp:image {"id":490} -->
+<figure class="wp-block-image"><img src="/wp-content/uploads/2019/08/Site-Extensions-img-5.jpg" alt="" class="wp-image-490"/></figure>
+<!-- /wp:image -->
