@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -169,7 +169,7 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>this file by itself useless we need the sonar-scanner npm package to use this. let's install it now.<br>run  <em><strong>npm install sonar-scanner — save-dev</strong></em><strong> </strong>in the root folder of your angular project. this will install sonar scanner<br>now re-open   package.json file and add  <strong>"sonar": "sonar-scanner", </strong> just after the  test:ci line <br>it should be like </p>
+<p>this file by itself useless we need the sonar-scanner npm package to use this. let's install it now.<br>run  npm install sonar-scanner --save-dev <br><em><strong> </strong></em>npm install sonar-scanner --save-dev<strong> </strong>in the root folder of your angular project. this will install sonar scanner<br>now re-open   package.json file and add  <strong>"sonar": "sonar-scanner", </strong> just after the  test:ci line <br>it should be like <br><br>npm install sonar-scanner --save-dev</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code -->
