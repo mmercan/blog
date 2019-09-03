@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
+  https://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
 published: true
 post_date: 2019-08-18 06:35:49
 ---
@@ -149,7 +149,7 @@ post_date: 2019-08-18 06:35:49
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>and found <br> <a href="https://github.com/aspnet/AspNetCore/blob/62351067ff4c1401556725b401478e648b66acdc/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs">https://github.com/aspnet/AspNetCore/blob/62351067ff4c1401556725b401478e648b66acdc/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs</a> <br>this is how UseAuthentication Worked. if you check the code you will see </p>
+<p>and found <br> <a href="https://github.com/aspnet/AspNetCore/blob/62351067ff4c1401556725b401478e648b66acdc/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs" target="_blank" rel="noreferrer noopener" aria-label=" (opens in a new tab)">https://github.com/aspnet/AspNetCore/blob/62351067ff4c1401556725b401478e648b66acdc/src/Security/Authentication/Core/src/AuthenticationMiddleware.cs</a> <br>this is how UseAuthentication Worked. if you check the code you will see </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"csharp"} -->
