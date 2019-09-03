@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -223,3 +223,11 @@ RUN npm run test:ci; exit 0
 RUN npm run sonar
 </pre>
 <!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:image {"id":603} -->
+<figure class="wp-block-image"><img src="/wp-content/uploads/2019/09/Angular-Unit-Test-and-Code-Coverage-in-Sonarqube-4.jpg" alt="" class="wp-image-603"/></figure>
+<!-- /wp:image -->
+
+<!-- wp:paragraph -->
+<p>Next Step is adding more tests covering more or maybe failing the image build if Quality gate Fails.</p>
+<!-- /wp:paragraph -->
