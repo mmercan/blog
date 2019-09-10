@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -38,7 +38,7 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Before creating a new site extension, there is already a wide range of extensions available and you can check them from your the azure portal or Kudu's extension page. You can just install and use them (Click your web app in azure portal and select extension on the menu or Go Kudu and click Extension button on the right top corner), <br>you may see link to <a href="https://www.siteextensions.net/packages">https://www.siteextensions.net/packages</a>  but last year Microsoft changed the site extension repository and merged into Nuget and the link is outdated.<br><br>As those Extensions<em> haven't been validated on their behaviors (Extensions uses Nuget Servers as a repository and, you are taking a risk on installing them to your environment as they may have malicious can access everything your web app can access.</em></p>
+<p>Before creating a new site extension, there is already a wide range of extensions available and you can check them from your the Azure portal or Kudu's extension page. You can just install and use them (Click your web app in Azure portal and select extension on the menu or Go Kudu and click Extension button on the right top corner), <br>you may see the link to <a href="https://www.siteextensions.net/packages">https://www.siteextensions.net/packages</a>  but last year Microsoft changed the site extension repository and merged into Nuget and the link is outdated.<br><br>As those Extensions<em> haven't been validated on their behaviors (Extensions uses Nuget Servers as a repository and, you are taking a risk on installing them to your environment as they may have malicious can access everything your web app can access.</em></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:gallery {"ids":[457,459]} -->
@@ -102,7 +102,7 @@ What is Site Extensions
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to  artifacts folder too. it will create a nuget package from artifacts folder in the root folder and push it to the nuget feed.<br>when you open the azure portal and check the extension on your azure web app you can see the extension is there now.</p>
+<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to artifacts folder too. it will create a nuget package from artifacts folder in the root folder and push it to the nuget feed.<br>when you open the azure portal and check the extension on your azure web app you can see the extension is there now.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
