@@ -7,12 +7,12 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
 <!-- wp:paragraph -->
-<p>I am trying to get better at testing, on .NET Core I was getting better, but angular projects in SonarQube had always %0 test coverage. even angular has built-in testing environment, I have never used it before.<br>I use CI- CD everywhere and I want my angular tests to run before docker image created. </p>
+<p>I am trying to get better at testing, on .NET Core I was getting better, but angular projects in SonarQube had always %0 test coverage. even angular has a built-in testing environment, I have never used it before.<br>I use CI-CD everywhere and I want my angular tests to run before the Docker image created. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":4} -->
@@ -28,7 +28,7 @@ post_date: 2019-08-15 06:42:43
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>before test starts you can see injected items are missing or if your test create instance manually parameters missing. if you have generic items you can also see those generic items are not reflected on the tests. add them fix them till all clears out and karma starts.<br>Specially Directives can cause a headache to test</p>
+<p>before test starts you can see injected items are missing or if your test creates instance manually parameters missing. if you have generic items you can also see those generic items are not reflected on the tests. add them fix them till all clear out and karma starts.<br>Specially Directives can cause a headache to test</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":4} -->
@@ -36,7 +36,7 @@ post_date: 2019-08-15 06:42:43
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>We run directives with components and tests should be the same. We need to create a component add the directive and test the directive in test component<br>first create a test component by <strong><em>ng g c test-tools/test</em></strong> (you don't have to change anything on this this is just a container for directives.<br><br>lets find the directive test file (.directive.spec.ts) or create a new one to test a directive without a test</p>
+<p>We run directives with components and tests should be the same. We need to create a component add the directive and test the directive in test component<br>first, create a test component by <strong><em>ng g c test-tools/test</em></strong> (you don't have to change anything on this is just a container for directives.<br><br>let's find the directive test file (.directive.spec.ts) or create a new one to test a directive without a test</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript"} -->
@@ -80,7 +80,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>On line 11, Create Test Module by importing every modules your  directive needs add services to providers and add component and the directive to declarations.  Override test component and add the directive to the component by overrideComponent (I want to use this component for all directives to test not just this directive keeping the template dynamic will allow me to do that). compileComponents returns a Promise, async waits till it compiles  the component<br><br>should onclick works query the fixture to find the directive checks it is injected after it calls onClick function and checks the return value.</p>
+<p>On line 11, Create Test Module by importing every module your directive needs add services to providers and add component and the directive to declarations.  Override test component and add the directive to the component by overrideComponent (I want to use this component for all directives to test not just this directive keeping the template dynamic will allow me to do that). compileComponents returns a Promise, async waits till it compiles  the component<br><br>should onclick works query the fixture to find the directive checks it is injected after it calls onClick function and checks the return value.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":563} -->
