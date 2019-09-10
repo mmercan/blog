@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -80,7 +80,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>On line 11, Create Test Module by importing every module your directive need. Add services to providers and add component and the directive to declarations.  Override test component and add the directive to the component by overrideComponent (I want to use this component for all directives to test not just this directive keeping the template dynamic will allow me to do that). compileComponents returns a Promise, async waits till it compiles  the component<br><br>should onclick works query the fixture to find the directive checks it is injected after it calls onClick function and checks the return value.</p>
+<p>On line 11, Create Test Module by importing every module your directive need. Add services to providers and add component and the directive to declarations.  Override test component and add the directive to the component by overrideComponent (I want to use this component for all directives to test not just this directive keeping the template dynamic will allow me to do that). compileComponents returns a Promise, async waits till it compiles  the component<br><br>should "onclick" works query the fixture to find the directive checks it is injected after it calls onClick function and checks the return value.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":563} -->
@@ -192,7 +192,7 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>now you can run <br><strong>npm run test:ci <br>npm run sonar</strong><br>first step will run the tests and the second line will send the result to sonarqube <br></p>
+<p>now you can run <br><strong>npm run test:ci <br>npm run sonar</strong><br>the first step will run the tests and the second line will send the result to SonarQube <br></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
