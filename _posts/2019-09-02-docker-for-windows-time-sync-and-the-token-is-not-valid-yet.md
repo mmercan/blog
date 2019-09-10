@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/02/docker-for-windows-time-sync-and-the-token-is-not-valid-yet/
+  https://mmercan.azurewebsites.net/2019/09/02/docker-for-windows-time-sync-and-the-token-is-not-valid-yet/
 published: true
 post_date: 2019-09-02 10:51:18
 ---
@@ -34,7 +34,7 @@ post_date: 2019-09-02 10:51:18
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>in my case, date-time sync is not working. I open Hyper-V Manager<br>Select <strong>DockerDesktopVM</strong> (in old system name was MobyLinuxVM) right Click and Select <strong>Settings</strong><br>click <strong>Integration Services</strong> from the left menu, if <strong>Time synchronization </strong>not checked, check it and Click Apply and OK,<br>if it is Checked, first unchecked <strong>Time synchronization</strong>  click Apply, Check again  <strong>Time synchronization</strong>  Apply Again and Click OK.</p>
+<p>in my case, date-time sync is not working. I open Hyper-V Manager<br>Select <strong>DockerDesktopVM</strong> (in old system name was MobyLinuxVM) right click and Select <strong>Settings</strong><br>click <strong>Integration Services</strong> from the left menu, if <strong>Time synchronization </strong>not checked, check it and Click Apply and OK,<br>if it is Checked, first unchecked <strong>Time synchronization</strong>  click Apply, Check again <strong>Time synchronization</strong> Apply Again and Click OK.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":577} -->
