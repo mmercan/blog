@@ -18,7 +18,7 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Site extensions are web apps with a metadata file. Hosts with your Azure web apps and can be written with any language Azure web apps support. Site extensions share the same resources with your Azure Web apps, can access to Web Apps file system, Certificate Store, Environment variables etc..  </p>
+<p>Site extensions are web apps with a metadata file. Hosts with your Azure web apps and can be written with any language Azure web apps support. Site extensions share the same resources with your Azure Web apps, can access to Web Apps file system, Certificate Store, Environment variables, etc..  </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":4} -->
