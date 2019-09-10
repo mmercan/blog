@@ -26,7 +26,7 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally, I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension  to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggregator <br>Running Health-checks on demands and in a scheduled interval and Showing them in a dashboard</p>
+<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>I use Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension  to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggregator <br>Running Health-checks on demands and in a scheduled interval and Showing them in a dashboard</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":462} -->
