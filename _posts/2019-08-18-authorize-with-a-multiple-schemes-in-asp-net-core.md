@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  https://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
+  http://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
 published: true
 post_date: 2019-08-18 06:35:49
 ---
