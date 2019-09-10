@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -137,7 +137,7 @@ Set-Location -Path $dir</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>What we deploy is just an empty mvc application.<br>We can use Controllers to interact with users or We can use IHostedService for Background tasks or  Scheduled Tasks</p>
+<p>What we deploy is just an empty MVC application.<br>We can use Controllers to interact with users or We can use IHostedService for Background tasks or  Scheduled Tasks</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":4} -->
