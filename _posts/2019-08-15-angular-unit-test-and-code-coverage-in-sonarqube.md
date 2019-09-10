@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -114,7 +114,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>As I am planing to run this with my CI, CD pipeline and in a Docker Container, I need to run those test headless <strong>--browsers ChromeHeadlessCI</strong> handle that part.<br>As we are running this to collect code coverage for SonarQube <strong>--code-coverage true</strong> self explanatory. <br>I want to run the test once and collect the result I am not after a file watcher on this -<strong>-watch false</strong><br><br>Next stop <strong>karma.conf.js</strong> you can find it in src folder of your project open it and Add  customLaunchers after the plugins file should be like below</p>
+<p>As I am planing to run this with my CI, CD pipeline and in a Docker Container, I need to run those test headless <strong>--browsers ChromeHeadlessCI</strong> handle that part.<br>As we are running this to collect code coverage for SonarQube <strong>--code-coverage true</strong> self-explanatory. <br>I want to run the test once and collect the result I am not after a file watcher on this -<strong>-watch false</strong><br><br>Next stop <strong>karma.conf.js</strong> you can find it in src folder of your project open it and Add  customLaunchers after the plugins file should be like below</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript"} -->
@@ -196,7 +196,7 @@ sonar.typescript.lcov.reportPaths=coverage/lcov.info</pre>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Bonus Content : Docker image to run them all (dockerfile below does it all) <br>Repository : <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/mmercan/sentinel/tree/master/Sentinel.UI.HealthMonitoring" target="_blank">https://github.com/mmercan/sentinel/tree/master/Sentinel.UI.HealthMonitoring</a> </p>
+<p>Bonus Content: Docker image to run them all (dockerfile below does it all) <br>Repository: <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://github.com/mmercan/sentinel/tree/master/Sentinel.UI.HealthMonitoring" target="_blank">https://github.com/mmercan/sentinel/tree/master/Sentinel.UI.HealthMonitoring</a> </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code -->
