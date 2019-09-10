@@ -7,12 +7,12 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
+  https://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
 published: true
 post_date: 2019-08-18 06:35:49
 ---
 <!-- wp:paragraph -->
-<p>This is going to be a long Post as I discover the process step by step and the pitfalls I fell along the way.<br>My apis had a single schema to authenticate Azure AD users this worked well for a long time </p>
+<p>This is going to be a long post as I discover the process step by step and the pitfalls I fell along the way.<br>My APIs had a single schema to authenticate Azure AD users this worked well for a long time </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"csharp"} -->
@@ -31,7 +31,7 @@ post_date: 2019-08-18 06:35:49
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>But Api exposed need to be consume by not just the employees but also by the authenticated customers which manage by Security token service  (STS) server (they could be combined but requirement is having two provider one for employees and other for customers)  this time default schema (AddJwtBearer without a name) will not work as there will be multiple Schema to authenticate</p>
+<p>But API exposed need to be consume by not just the employees but also by the authenticated customers which manage by Security token service  (STS) server (they could be combined but requirement is having two providers one for employees and other for customers)  this time default schema (AddJwtBearer without a name) will not work as there will be multiple Schema to authenticate</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"csharp"} -->
@@ -78,7 +78,7 @@ post_date: 2019-08-18 06:35:49
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>After having multiple Schema to authenticate, I start getting Errors from APIs. They don't know what Schema to use as there is no default Schema anymore. Adding  AuthenticationSchemes to  Authorize attribute solve the problem for a while.</p>
+<p>After having multiple Schema to authenticate, I start getting Errors from APIs. They don't know what Schema to use as there is no default Schema anymore. Adding  AuthenticationSchemes to  Authorize attribute to solve the problem for a while.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"csharp"} -->
@@ -100,7 +100,7 @@ post_date: 2019-08-18 06:35:49
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>I end up having another set for Api which consume by all Schemas and  keeping  AuthenticationSchemes  on  Authorize was not the best solution.<br>Line below solved the problem of putting AuthenticationSchemes on Authorize attribute<br><strong><em>options.DefaultPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().AddAuthenticationSchemes("azure", "sts").Build(); </em></strong></p>
+<p>I ended up having another set for API which consumes by all Schemas and keeping AuthenticationSchemes on  Authorize was not the best solution.<br>Line below solved the problem of putting AuthenticationSchemes on Authorize attribute<br><strong><em>options.DefaultPolicy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().AddAuthenticationSchemes("azure", "sts").Build(); </em></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"csharp"} -->
@@ -128,7 +128,7 @@ post_date: 2019-08-18 06:35:49
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>I was done till I need a Middleware which will block if user is not authenticated and Provide HealthCheck details if user is authenticated.<br>I got 401 from the middleware even I provided the JWT token, same token let me authenticate with [Authorize] but when I check  User.Identity.IsAuthenticated in a Method without  [Authorize] attribute I got False in controllers too.</p>
+<p>I was done till I need a Middleware which will block if user is not authenticated and Provide HealthCheck details if user is authenticated.<br>I got 401 from the middleware even I provided the JWT token, the same token let me authenticate with [Authorize] but when I check  User.Identity.IsAuthenticated in a Method without  [Authorize] attribute I got False in controllers too.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code -->
