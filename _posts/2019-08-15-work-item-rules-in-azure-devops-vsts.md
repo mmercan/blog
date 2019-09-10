@@ -10,7 +10,7 @@ published: true
 post_date: 2019-08-15 06:41:42
 ---
 <!-- wp:paragraph -->
-<p>VSTS has very highly customizable structure, every team project has a process (default Scrum or Agile) which can be changed. Specially if you have multiple projects with different requirements on project management wants to have different fields in their work items it might be a good idea to create process for those team projects. </p>
+<p>VSTS has very highly customizable structure, every team project has a process (default Scrum or Agile) which can be changed. Especially if you have multiple projects with different requirements on project management wants to have different fields in their work items it might be a good idea to create a process for those team projects. </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":493,"width":585,"height":577} -->
@@ -18,7 +18,7 @@ post_date: 2019-08-15 06:41:42
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>This new process will open the door to customize your work items for the projects need. you can add New work item types, States, customize the layout by adding groups  or pages, you can add new fields, </p>
+<p>This new process will open the door to customize your work items for the projects need. you can add new work item types, States, customize the layout by adding groups or pages, you can add new fields, </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":495} -->
@@ -26,7 +26,7 @@ post_date: 2019-08-15 06:41:42
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>all good and well but generally those requirements never ends with just adding some fields. Some fields will be required base on the state of some other field and some fields values need to be automatically  calculated .</p>
+<p>all good and well but generally those requirements never ends with just adding some fields. Some fields will be required base on the state of some other field and some fields values need to be automatically calculated.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":498} -->
@@ -34,7 +34,7 @@ post_date: 2019-08-15 06:41:42
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>Work Item Rules help us to create all those rules/calculations  <br>Conditions are : (not all make sense when you planned to use as the first  condition, but  you combine them <br>like : if   <strong>No value is defined for</strong> <em>Assigned To</em> And    <strong>A work item state is</strong> <em>Closed</em><br>You can have max 2  Conditions  per Rule</p>
+<p>Work Item Rules help us to create all those rules/calculations  <br>Conditions are : (not all make sense when you planned to use as the first  condition, but  you combine them <br>like: if   <strong>No value is defined for</strong> <em>Assigned To</em> And    <strong>A work item state is</strong> <em>Closed</em><br>You can have max 2  Conditions  per Rule</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
@@ -42,7 +42,7 @@ post_date: 2019-08-15 06:41:42
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
-<p>And Actions Are:<br>like :  <strong>Make required</strong> <em>TestId</em><br>You can have max 10 Actions  per Rule </p>
+<p>And Actions Are:<br>like: <strong>Make required</strong> <em>TestId</em><br>You can have max 10 Actions  per Rule </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:list -->
@@ -50,5 +50,5 @@ post_date: 2019-08-15 06:41:42
 <!-- /wp:list -->
 
 <!-- wp:paragraph -->
-<p>as Last note, if you like to automate things even the Rules, you can use the REST API to do that too.<br>for more details :<br> <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/processes/rules?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/processes/rules?view=azure-devops-rest-5.1</a> </p>
+<p>Last note, if you like to automate things even the Rules, you can use the REST API to do that too.<br>for more details :<br> <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/processes/rules?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/processes/rules?view=azure-devops-rest-5.1</a> </p>
 <!-- /wp:paragraph -->
