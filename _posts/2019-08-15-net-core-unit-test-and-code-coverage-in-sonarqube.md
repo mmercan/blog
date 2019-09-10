@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/net-core-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/net-core-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:13
 ---
@@ -50,7 +50,7 @@ post_date: 2019-08-15 06:42:13
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>This Merged JSON coverages and export them as XML in opencover format<br>here is the Full docker test file if you interested<br> <a href="https://github.com/mmercan/sentinel/blob/master/Sentinel.Api.HealthMonitoring/dockerfile-linux-test">https://github.com/mmercan/sentinel/blob/master/Sentinel.Api.HealthMonitoring/dockerfile-linux-test</a> <br>and SonarQube Result Page<br> <a href="https://sonarcloud.io/dashboard?id=Sentinel.Api.HealthMonitoring">https://sonarcloud.io/dashboard?id=Sentinel.Api.HealthMonitoring</a> <br> </p>
+<p>This Merged JSON coverages and export them as XML in Opencover format<br>here is the Full docker test file if you interested<br> <a href="https://github.com/mmercan/sentinel/blob/master/Sentinel.Api.HealthMonitoring/dockerfile-linux-test">https://github.com/mmercan/sentinel/blob/master/Sentinel.Api.HealthMonitoring/dockerfile-linux-test</a> <br>and SonarQube Result Page<br> <a href="https://sonarcloud.io/dashboard?id=Sentinel.Api.HealthMonitoring">https://sonarcloud.io/dashboard?id=Sentinel.Api.HealthMonitoring</a> <br> </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":517} -->
