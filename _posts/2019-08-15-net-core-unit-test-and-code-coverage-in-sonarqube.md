@@ -12,7 +12,7 @@ published: true
 post_date: 2019-08-15 06:42:13
 ---
 <!-- wp:paragraph -->
-<p>While I was working on my side project  <a href="https://github.com/mmercan/sentinel">Sentinel(https://github.com/mmercan/sentinel</a>)  I have several <br>Dotnet Core projects, I have  separate docker images for testing and I used dotnet test as below.</p>
+<p>While I was working on my side project  <a href="https://github.com/mmercan/sentinel">Sentinel(https://github.com/mmercan/sentinel</a>)  I have several <br>Dotnet Core projects, I have separate docker images for testing and I used dotnet test as below.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"bash"} -->
@@ -23,7 +23,7 @@ post_date: 2019-08-15 06:42:13
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>They worked quite nicely and having no problem till there are more than one test projects.  When I run it with multiple test projects I could only see the latest test test coverage,When I dig in to it coverage.opencover.xml file in TestResults Folder overridden by each project and last test project coverage will be send to SonarQube. this wasn't ideal.<br>When I search I find <strong>/p:MergeWith</strong> flag merge coverage of multiple projects Which could solve my problem has one problem it can only work with JSON  and SonarQube expects XML<br><br>My Solution was unconventional but it worked fine for me. <br>First Step I run the test and merged all test results as JSON (I added logger and results-directory to collect more info to SonarQube)</p>
+<p>They worked quite nicely and having no problem until there are more than one test projects.  When I run it with multiple test projects I could only see the latest test, test coverage. When I dig into it coverage.opencover.xml file in TestResults Folder overridden by each project and last test project coverage will be sent to SonarQube. this wasn't ideal.<br>When I search I find <strong>/p:MergeWith</strong> flag merge coverage of multiple projects Which could solve my problem has one problem it can only work with JSON  and SonarQube expects XML<br><br>My Solution was unconventional but it worked fine for me. <br>The first step, I run the test and merged all test results as JSON (I added logger and results-directory to collect more info to SonarQube)</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code -->
