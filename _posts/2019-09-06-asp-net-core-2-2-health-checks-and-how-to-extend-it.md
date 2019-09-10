@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/06/asp-net-core-2-2-health-checks-and-how-to-extend-it/
+  https://mmercan.azurewebsites.net/2019/09/06/asp-net-core-2-2-health-checks-and-how-to-extend-it/
 published: true
 post_date: 2019-09-06 06:24:44
 ---
