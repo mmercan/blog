@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -50,11 +50,11 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Firstly I am using  ASP.NET Core  2.2 but you can write your extension with ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. <br><br>I already Created a Github Repo you can clone from <a href="https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions">https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions</a> <br>if you want to follow along  run <a href="https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions/blob/master/createWebApp.ps1">https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions/blob/master/createWebApp.ps1</a> in the main folder you want to create your project</p>
+<p>Firstly I am using  ASP.NET Core  2.2 but you can write your extension with ASP.NET, ASP.NET Core, Java, Ruby, Node.js, PHP, or Python. <br><br>I already created a Github Repo you can clone from <a href="https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions">https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions</a> <br>if you want to follow along  run <a href="https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions/blob/master/createWebApp.ps1">https://github.com/mmercan/Creating-Azure-WebSites-Site-Extensions/blob/master/createWebApp.ps1</a> in the main folder you want to create your project</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Create applicationHost.xdt file in the main folder and copy the XML below.<br>Path I want to access to the extension is <strong>/healthcheck</strong>, it will be different for your extension. just change  <strong>/healthcheck</strong>  to path you desire in the save it.</p>
+<p>Create applicationHost.xdt file in the main folder and copy the XML below.<br>The path I want to access to the extension is <strong>/healthcheck</strong>, it will be different for your extension. just change  <strong>/healthcheck</strong> to path you desire in the save it.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"xml","makeURLsClickable":false} -->
