@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -26,7 +26,7 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension&nbsp; to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggrigator <br>Running Health-checks on demands and in a scheduled intervals and Showing them in a dashboard</p>
+<p> Site Extensions for anyone who  is trying to extend Azure Web apps capabilities, automate tasks (renew certificates, Minify Resources), add Diagnostic and Monitoring to their Azure Web apps <br><br>Personally, I use <br>Azure Let's Encrypt to Automate SSL cert <br>AppDynamics.WindowsAzure.SiteExtension  to connect to AppDynamics <br>and 3 private Site Extensions to<br>Combine all Environment variables per Web App to see what settings are applied.<br>Log Aggregator <br>Running Health-checks on demands and in a scheduled interval and Showing them in a dashboard</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":462} -->
@@ -38,7 +38,7 @@ What is Site Extensions
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Before creating a new site extension, there are already a wide range of extensions available and you can check them from your the azure portal or Kudu's extension page. You can just install and use them (Click your web app in azure portal and select extension on menu or Go Kudu and click Extension button on the right top corner), <br>you may see link to <a href="https://www.siteextensions.net/packages">https://www.siteextensions.net/packages</a>  but last year Microsoft changed the site extension repository and merged in to Nuget and the link is outdated.<br><br><em>As those Extension haven't been validated on their behaviors (Extensions uses Nuget Servers as a repository and , you are taking risk on installing them to your environment as they may have malicious can access everything your web app can access.</em></p>
+<p>Before creating a new site extension, there is already a wide range of extensions available and you can check them from your the azure portal or Kudu's extension page. You can just install and use them (Click your web app in azure portal and select extension on menu or Go Kudu and click Extension button on the right top corner), <br>you may see link to <a href="https://www.siteextensions.net/packages">https://www.siteextensions.net/packages</a>  but last year Microsoft changed the site extension repository and merged in to Nuget and the link is outdated.<br><br><em>As those Extension haven't been validated on their behaviors (Extensions uses Nuget Servers as a repository and , you are taking risk on installing them to your environment as they may have malicious can access everything your web app can access.</em></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:gallery {"ids":[457,459]} -->
