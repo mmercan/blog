@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -54,7 +54,7 @@ What is Site Extensions
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Create applicationHost.xdt file in the main folder and copy the XML below.<br>The path I want to access to the extension is <strong>/healthcheck</strong>, it will be different for your extension. just change  <strong>/healthcheck</strong> to path you desire in the save it.</p>
+<p>Create applicationHost.xdt file in the main folder and copy the XML below.<br>The path I want to access to the extension is <strong>/healthcheck</strong>, it will be different for your extension. just change  <strong>/healthcheck</strong> to the path you desire in the save it.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"xml","makeURLsClickable":false} -->
@@ -74,7 +74,7 @@ What is Site Extensions
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>  Create HealthCheck.nuspec  file in the main folder and copy the XML below.  <br>if you ever worked with nuspec file this is just a regular Nuget  package metadata except <br><strong> &lt;packageType name="AzureSiteExtension" /&gt;</strong> which defined this package as an AzureSiteExtension<br>if you want to more about  package metadata  <a href="https://docs.microsoft.com/en-us/nuget/reference/nuspec">https://docs.microsoft.com/en-us/nuget/reference/nuspec</a> </p>
+<p>  Create a HealthCheck.nuspec file in the main folder and copy the XML below.  <br>if you ever worked with nuspec file this is just regular Nuget  package metadata except <br><strong> &lt;packageType name="AzureSiteExtension" /></strong> which defined this package as an AzureSiteExtension<br>if you want to more about  package metadata  <a href="https://docs.microsoft.com/en-us/nuget/reference/nuspec">https://docs.microsoft.com/en-us/nuget/reference/nuspec</a> </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"xml","makeURLsClickable":false} -->
