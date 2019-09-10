@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -149,7 +149,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>you should also see <strong>coverage </strong>folder in your project's root folder.<br>as the test is running fine we can start the last step getting them into SonarQube<br>first Create <strong>sonar-project.properties</strong> file in the root folder of your angular project, <br>I used sonarcloud and installed instance of sonarqube this file works fine with both (if you are running your own SonarQube you don't need sonar.organization)</p>
+<p>you should also see <strong>coverage </strong>folder in your project's root folder.<br>as the test is running fine we can start the last step getting them into SonarQube<br>first Create <strong>sonar-project.properties</strong> file in the root folder of your angular project, <br>I used SonarCloud and installed instance of SonarQube this file works fine with both (if you are running your own SonarQube you don't need sonar.organization)</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code -->
