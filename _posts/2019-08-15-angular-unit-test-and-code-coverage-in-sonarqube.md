@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -20,7 +20,7 @@ post_date: 2019-08-15 06:42:43
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>I can simply run <strong>ng test </strong>to test my angular app, if you are using angular-cli generate (<strong>ng g</strong>) you already have tests for your components services etc... but if you are like me they are probably broken. if you import modules and use them in your components or inject services to services or components it will break your tests.<br>first start fixing them <br>run <strong>ng test </strong>and you will get error messages</p>
+<p>I can simply run <strong>ng test </strong>to test my angular app, if you are using angular-cli generate (<strong>ng g</strong>) you already have tests for your components services etc... but if you are like me they are probably broken. if you import modules and use them in your components or inject services to services or components it will break your tests.<br>first, start fixing them <br>run <strong>ng test </strong>and you will get error messages</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":556} -->
@@ -36,7 +36,7 @@ post_date: 2019-08-15 06:42:43
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>We run directives with components and tests should be the same. We need to create a component add the directive and test the directive in test component<br>first, create a test component by <strong><em>ng g c test-tools/test</em></strong> (you don't have to change anything on this is just a container for directives.<br><br>let's find the directive test file (.directive.spec.ts) or create a new one to test a directive without a test</p>
+<p>We run directives with components and tests should be the same. We need to create a component, add the directive and test the directive in test component<br>first, create a test component by <strong><em>ng g c test-tools/test</em></strong> (you don't have to change anything on this is just a container for directives.<br><br>let's find the directive test file (.directive.spec.ts) or create a new one to test a directive without a test</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript"} -->
