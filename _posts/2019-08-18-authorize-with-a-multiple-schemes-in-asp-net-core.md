@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
+  https://mmercan.azurewebsites.net/2019/08/18/authorize-with-a-multiple-schemes-in-asp-net-core/
 published: true
 post_date: 2019-08-18 06:35:49
 ---
@@ -165,7 +165,7 @@ post_date: 2019-08-18 06:35:49
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>you can see a Middleware I wrote to fill that gap, it is not perfect and cost more resources to compute but it works. Instead of calling Schemes.GetDefaultAuthenticateSchemeAsync() it calls Schemes.GetAllSchemesAsync() and loop through all Schemas and tries to Autheticate you on with each schema name.</p>
+<p>you can see a Middleware I wrote to fill that gap, it is not perfect and cost more resources to compute but it works. Instead of calling Schemes.GetDefaultAuthenticateSchemeAsync() it calls Schemes.GetAllSchemesAsync() and loop through all Schemas and try to Authenticate you on with each schema name.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"csharp"} -->
