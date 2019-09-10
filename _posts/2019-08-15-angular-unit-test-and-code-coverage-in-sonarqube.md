@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
+  https://mmercan.azurewebsites.net/2019/08/15/angular-unit-test-and-code-coverage-in-sonarqube/
 published: true
 post_date: 2019-08-15 06:42:43
 ---
@@ -114,7 +114,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>As I am planing to run this with my CI, CD pipeline and in a Docker Container, I need to run those test headless <strong>--browsers ChromeHeadlessCI</strong> handle that part.<br>As we are running this to collect code coverage for SonarQube <strong>--code-coverage true</strong> self-explanatory. <br>I want to run the test once and collect the result I am not after a file watcher on this -<strong>-watch false</strong><br><br>Next stop <strong>karma.conf.js</strong> you can find it in src folder of your project open it and Add  customLaunchers after the plugins file should be like below</p>
+<p>As I am planning to run this with my CI, CD pipeline and in a Docker container, I need to run those test headless <strong>--browsers ChromeHeadlessCI</strong> handle that part.<br>As we are running this to collect code coverage for SonarQube <strong>--code-coverage true</strong> self-explanatory. <br>I want to run the test once and collect the result I am not after a file watcher on this -<strong>-watch false</strong><br><br>Next stop <strong>karma.conf.js</strong> you can find it in src folder of your project open it and Add  customLaunchers after the plugins file should be like below</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript"} -->
@@ -141,7 +141,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>before adding SonarQube in to the picture open a PowerShell window in your project Folder and Call<br><strong><em>npm run test:ci</em></strong></p>
+<p>before adding SonarQube in to the picture open a PowerShell window in your Project Folder and Call<br><strong><em>npm run test:ci</em></strong></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":600} -->
@@ -149,7 +149,7 @@ describe('ToggleFullscreenDirective', () => {
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>you should also see <strong>coverage </strong>folder in your project's root folder.<br>as test is running fine we can start the last step getting them in to SonarQube<br>first Create <strong>sonar-project.properties</strong> file in the root folder of your angular project, <br>I used sonarcloud and installed instance of sonarqube this file works fine with both (if you are running your own SonarQube you don't need sonar.organization)</p>
+<p>you should also see <strong>coverage </strong>folder in your project's root folder.<br>as the test is running fine we can start the last step getting them into SonarQube<br>first Create <strong>sonar-project.properties</strong> file in the root folder of your angular project, <br>I used sonarcloud and installed instance of sonarqube this file works fine with both (if you are running your own SonarQube you don't need sonar.organization)</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code -->
