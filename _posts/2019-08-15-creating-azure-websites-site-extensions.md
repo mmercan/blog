@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -102,7 +102,7 @@ What is Site Extensions
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to artifacts folder too. it will create a nuget package from artifacts folder in the root folder and push it to the nuget feed.<br>when you open the azure portal and check the extension on your azure web app you can see the extension is there now.</p>
+<p> Create publish.ps1 file in the main folder and copy the script below. <br>Publish script simply publish the web app to artifacts folder copies the  applicationHost.xdt file to artifacts folder too. it will create a NuGet package from artifacts folder in the root folder and push it to the NuGet feed.<br>when you open the azure portal and check the extension on your azure web app you can see the extension is there now.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
@@ -145,7 +145,7 @@ Set-Location -Path $dir</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>in some cases you don't want to  clutter the nuget feed and seperate our extensions.<br>just replace your dotnet nuget push lane with </p>
+<p>in some cases you don't want to  clutter the NuGet feed and seperate our extensions.<br>just replace your dotnet NuGet push lane with </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
@@ -153,7 +153,7 @@ Set-Location -Path $dir</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>and Add  SCM_SITEEXTENSIONS_FEED_URL  to your Web Apps Configuration and set it to your myget (or any other public nuget) feed</p>
+<p>and Add  SCM_SITEEXTENSIONS_FEED_URL  to your Web Apps Configuration and set it to your myget (or any other public NuGet) feed</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
