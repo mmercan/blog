@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
+  https://mmercan.azurewebsites.net/2019/08/15/creating-azure-websites-site-extensions/
 published: true
 post_date: 2019-08-15 06:38:46
 ---
@@ -145,7 +145,7 @@ Set-Location -Path $dir</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>in some cases you don't want to  clutter the NuGet feed and seperate our extensions.<br>just replace your dotnet NuGet push lane with </p>
+<p>in some cases, you don't want to clutter the NuGet feed and separate our extensions.<br>just replace your dotnet NuGet push lane with </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
