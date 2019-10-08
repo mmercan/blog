@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -119,7 +119,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>Before getting into the Script you might want to check the VSTS  _apis/test/codecoverage api from <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1</a><br>This is the PowerShell script uses an API to get code coverage data for a build. The result we get is a JSON.  modules array contains projects and their  linesNotCovered and linesCovered integer numbers.</p>
+<p>Before getting into the Script you might want to check the VSTS  <strong>_apis/test/codecoverage</strong> API from <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1</a><br>This is the PowerShell script uses an API to get code coverage data for a build. The result we get is a JSON.  modules array contains projects and their  linesNotCovered and linesCovered integer numbers.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript","lineNumbers":false,"highlightLines":"13,21,21"} -->
