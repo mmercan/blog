@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -206,7 +206,29 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>three</p>
+<p>On SonarQube we can simply access the /api/qualitygates/project_status api with project key and get the result of the quality gate of your project but as analysis is a background task and can take a while, when you hit the api you may get the previous result and you don't want to have that.<br>SonarQube scanners generally create a <strong>report-task.txt</strong> file. This file contains the <strong>ceTaskUrl</strong> which has has the field for <strong>anaysisId </strong>to access our unique quality gate result.<br>dotnet core SonarScanner store it in <strong>out\.sonar</strong> folder on the current directory you run the SonarScanner  <br>npm sonar-scanner store it in<strong> .scannerwork</strong> folder  on the current directory you run the sonar-scanner </p>
+<!-- /wp:paragraph -->
+
+<!-- wp:paragraph -->
+<p>
+
+report-task.txt File
+
+</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code -->
+<pre class="wp-block-syntaxhighlighter-code">organization=mmercan-github
+projectKey=Sentinel.Api.HealthMonitoring
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.884
+dashboardUrl=https://sonarcloud.io/dashboard?id=Sentinel.Api.HealthMonitoring
+ceTaskId=AW2LcrjNeWHkXTI8--hG
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW2LcrjNeWHkXTI8--hG</pre>
+<!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:paragraph -->
+<p>PowerShell simply try to access the <strong>report-task.txt</strong> file read ceTaskUrl and make a WebRequest to the url with Authorization header. Result of this request is a json with the field name <strong>analysisId</strong>.<br>We make a second WebRequest to<strong> /api/qualitygates/project_status?analysisId=$analysisId</strong> with filling the  $analysisId from the first WebRequest</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell","lineNumbers":false,"makeURLsClickable":false} -->
@@ -229,7 +251,6 @@ Param (
     $backupProjectkey
 
 )
-
 $TokenAsBytes = [System.Text.Encoding]::UTF8.GetBytes(("$SonarToken" + ":"))
 $Base64Token = [System.Convert]::ToBase64String($TokenAsBytes)
 $AuthorizationHeaderValue = [String]::Format("Basic {0}", $Base64Token)
@@ -237,8 +258,6 @@ $Headers = @{
     Authorization = $AuthorizationHeaderValue; 
     AcceptType    = "application/json"  
 }
-
-
 function GetStatus {
     param (
         [Parameter(Mandatory = $true)] $ServerUrl,
@@ -266,7 +285,6 @@ function GetStatus {
         Write-Error $ErrorMsg
     }
 }
-
 
 $SonarTaskFile = "$DotSonarQubeFolder\out\.sonar\report-task.txt"
 
