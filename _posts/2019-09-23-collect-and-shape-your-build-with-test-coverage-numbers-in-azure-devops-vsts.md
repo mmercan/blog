@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -258,6 +258,69 @@ ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW2LcrjNeWHkXTI8--hG</pre>
 
 <!-- wp:paragraph -->
 <p><br>We make a second WebRequest to<strong> /api/qualitygates/project_status?analysisId=</strong>$Response.task.analysisId with adding the <strong>analysisId </strong>from the first WebRequest<br>Second  WebRequest also result with a JSON response, if projectStatus.status is "OK" or "NONE" we accept this as a success any other result will cause a double error Write-Error and Write-Output "##vso[task.complete result=Failed;]" this is overkill if you are using the VSTS PowerShell task as it translates Write-Error  to a task fail too.</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:syntaxhighlighter/code {"language":"jscript","lineNumbers":false,"highlightLines":"3","makeURLsClickable":false} -->
+<pre class="wp-block-syntaxhighlighter-code">{
+  "projectStatus": {
+    "status": "ERROR",
+    "conditions": [
+      {
+        "status": "ERROR",
+        "metricKey": "new_reliability_rating",
+        "comparator": "GT",
+        "periodIndex": 1,
+        "errorThreshold": "1",
+        "actualValue": "2"
+      },
+      {
+        "status": "OK",
+        "metricKey": "new_security_rating",
+        "comparator": "GT",
+        "periodIndex": 1,
+        "errorThreshold": "1",
+        "actualValue": "1"
+      },
+      {
+        "status": "OK",
+        "metricKey": "new_maintainability_rating",
+        "comparator": "GT",
+        "periodIndex": 1,
+        "errorThreshold": "1",
+        "actualValue": "1"
+      },
+      {
+        "status": "ERROR",
+        "metricKey": "new_coverage",
+        "comparator": "LT",
+        "periodIndex": 1,
+        "errorThreshold": "80",
+        "actualValue": "71.42857142857143"
+      },
+      {
+        "status": "ERROR",
+        "metricKey": "new_duplicated_lines_density",
+        "comparator": "GT",
+        "periodIndex": 1,
+        "errorThreshold": "3",
+        "actualValue": "30.493273542600896"
+      }
+    ],
+    "periods": [
+      {
+        "index": 1,
+        "mode": "days",
+        "date": "2019-08-29T08:56:43+0200",
+        "parameter": "30"
+      }
+    ],
+    "ignoredConditions": false
+  }
+}</pre>
+<!-- /wp:syntaxhighlighter/code -->
+
+<!-- wp:paragraph -->
+<p>PowerShell</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell","lineNumbers":false,"makeURLsClickable":false} -->
