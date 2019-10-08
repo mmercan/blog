@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -20,7 +20,7 @@ post_date: 2019-09-23 00:51:01
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>Usage of dotnet cli is skyrocketed in our pipelines. it is easy and can bu run everywhere including docker images.<br>You can simply add <a rel="noreferrer noopener" aria-label="dotnet-reportgenerator (opens in a new tab)" href="https://danielpalme.github.io/ReportGenerator/" target="_blank">dotnet-reportgenerator</a> to summarize the result and read the  "Line coverage" <br>string. The line should be like  <strong>Line coverage: 68.1%</strong>, just extract the number and compare with expected percentage. If it is lower Write-Error, VSTS will catch this as an error and fails the build, otherwise Write-Host to let people know the result. (Bash file is not the best and if you have a better version please share in a comment)<br>this technique can be used anywhere you can add PowerShell or Bash task to your VSTS build and use this or simply add this to your docker image build </p>
+<p>The usage of dotnet cli is skyrocketed in our pipelines. it is easy and can bu run everywhere including docker images.<br>You can simply add <a rel="noreferrer noopener" aria-label="dotnet-reportgenerator (opens in a new tab)" href="https://danielpalme.github.io/ReportGenerator/" target="_blank">dotnet-reportgenerator</a> to summarize the result and read the  "Line coverage" <br>string. The line should be like  <strong>Line coverage: 68.1%</strong>, just extract the number and compare with the expected percentage. If it is lower Write-Error, VSTS will catch this as an error and fails the build, otherwise Write-Host to let people know the result. (Bash file is not the best and if you have a better version please share in a comment)<br>this technique can be used anywhere you can add PowerShell or Bash task to your VSTS build and use this or simply add this to your docker image build </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -95,7 +95,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>If you are using VSTS tasks to build, probably you will have VsTest Task on your pipeline (as it is the default option when you select  ASP.NET Template)<br>VsTask is capable to getting the  Code coverage, but you need to check the option  Code coverage enabled from the task options.</p>
+<p>If you are using VSTS tasks to build, probably you will have VsTest Task on your pipeline (as it is the default option when you select  ASP.NET Template)<br>VsTask is capable of getting the  Code coverage, but you need to check the option  Code coverage enabled from the task options.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":724} -->
@@ -103,7 +103,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>if Code coverage is enabled and run your build, you should have a tab for  Code coverage in your build result page  you can donwload the coverage file open in visual studio and see what lines of your code is covered.</p>
+<p>if Code coverage is enabled and run your build, you should have a tab for  Code coverage in your build result page you can download the coverage file open in visual studio and see what lines of your code is covered.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:image {"id":725,"width":467,"height":161} -->
@@ -119,7 +119,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>Before getting in to the Script you might want to check the VSTS  _apis/test/codecoverage api from <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1</a><br>This is the PowerShell script uses an API to get code coverage data for a build. The result we get is a JSON.  modules array contains projects and their  linesNotCovered and linesCovered integer numbers.</p>
+<p>Before getting into the Script you might want to check the VSTS  _apis/test/codecoverage api from <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1</a><br>This is the PowerShell script uses an API to get code coverage data for a build. The result we get is a JSON.  modules array contains projects and their  linesNotCovered and linesCovered integer numbers.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript","lineNumbers":false,"highlightLines":"13,21,21"} -->
