@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -119,7 +119,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
-<p>Before getting into the Script you might want to check the VSTS  <strong>_apis/test/codecoverage</strong> API from <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1</a><br>This is the PowerShell script uses an API to get code coverage data for a build. The result we get is a JSON.  modules array contains projects and their  linesNotCovered and linesCovered integer numbers.</p>
+<p>Before getting into the Script you might want to check the VSTS  <strong>_apis/test/codecoverage</strong> API from <a href="https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1">https://docs.microsoft.com/en-us/rest/api/azure/devops/test/code%20coverage/get%20build%20code%20coverage?view=azure-devops-rest-5.1</a><br>This is the PowerShell script uses an API to get code coverage data for a build. The result we get is a JSON.  modules array contains projects and their <strong>linesNotCovered</strong> and linesCovered integer numbers.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"jscript","lineNumbers":false,"highlightLines":"13,21,21"} -->
@@ -159,7 +159,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>In Powershell we will request the JSON from VSTS if we can get the result (there is always possibility to not getting the coverage as there might be nothing to test or coverage check not selected) script will loop through all modules (projects) and add their covered and not covered blocks and calculate the overall coverage if it is less the expected Percentage it will Write-Error and  VSTS task will fail, otherwise it will report the code coverage numbers with Write-Host</p>
+<p>In Powershell we will request the JSON from VSTS if we can get the result (there is always a possibility to not getting the coverage as there might be nothing to test or coverage check not selected) script will loop through all modules (projects) and add their covered and not covered blocks and calculate the overall coverage if it is less the expected Percentage it will Write-Error and  VSTS task will fail, otherwise it will report the code coverage numbers with Write-Host</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell"} -->
@@ -206,7 +206,7 @@ done &lt; "/TestResults/coveragereport/Summary.txt"</pre>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>On SonarQube we can simply access the /api/qualitygates/project_status api with project key and get the result of the quality gate of your project but as analysis is a background task and can take a while, when you hit the api you may get the previous result and you don't want to have that.<br>SonarQube scanners generally create a <strong>report-task.txt</strong> file. This file contains the <strong>ceTaskUrl</strong> which has has the field for <strong>anaysisId </strong>to access our unique quality gate result.<br>dotnet core SonarScanner store it in <strong>out\.sonar</strong> folder on the current directory you run the SonarScanner  <br>npm sonar-scanner store it in<strong> .scannerwork</strong> folder  on the current directory you run the sonar-scanner </p>
+<p>On SonarQube we can simply access the /api/qualitygates/project_status API with project key and get the result of the quality gate of your project but as analysis is a background task and can take a while, when you hit the API you may get the previous result and you don't want to have that.<br>SonarQube scanners generally create a <strong>report-task.txt</strong> file. This file contains the <strong>ceTaskUrl</strong> which has the field for <strong>anaysisId </strong>to access our unique quality gate result.<br>dotnet core SonarScanner store it in <strong>out\.sonar</strong> folder on the current directory you run the SonarScanner  <br>npm sonar-scanner store it in<strong> .scannerwork</strong> folder  on the current directory you run the sonar-scanner </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -228,7 +228,7 @@ ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW2LcrjNeWHkXTI8--hG</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>PowerShell simply try to access the <strong>report-task.txt</strong> file read ceTaskUrl and make a WebRequest to the url with Authorization header. Result of this request is a json with the field name <strong>analysisId</strong>.<br>We make a second WebRequest to<strong> /api/qualitygates/project_status?analysisId=</strong>$Response.task.analysisId with adding the <strong>analysisId </strong>from the first WebRequest<br>Second  WebRequest also result with a JSON response, if projectStatus.status is "OK" or "NONE" we accept this as a success any other result will cause a double error Write-Error and Write-Output "##vso[task.complete result=Failed;]" this is overkill if you are using the vsts PowerShell task as it translate  Write-Error  to a task fail too.</p>
+<p>PowerShell simply tries to access the <strong>report-task.txt</strong> file read ceTaskUrl and make a WebRequest to the URL with Authorization header. The result of this request is a JSON with the field name <strong>analysisId</strong>.<br>We make a second WebRequest to<strong> /api/qualitygates/project_status?analysisId=</strong>$Response.task.analysisId with adding the <strong>analysisId </strong>from the first WebRequest<br>Second  WebRequest also result with a JSON response, if projectStatus.status is "OK" or "NONE" we accept this as a success any other result will cause a double error Write-Error and Write-Output "##vso[task.complete result=Failed;]" this is overkill if you are using the vsts PowerShell task as it translates Write-Error  to a task fail too.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell","lineNumbers":false,"makeURLsClickable":false} -->
