@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
