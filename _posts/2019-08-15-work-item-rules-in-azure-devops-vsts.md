@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/08/15/work-item-rules-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/08/15/work-item-rules-in-azure-devops-vsts/
 published: true
 post_date: 2019-08-15 06:41:42
 ---

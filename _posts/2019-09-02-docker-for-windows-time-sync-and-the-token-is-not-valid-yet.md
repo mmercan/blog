@@ -5,7 +5,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/02/docker-for-windows-time-sync-and-the-token-is-not-valid-yet/
+  https://mmercan.azurewebsites.net/2019/09/02/docker-for-windows-time-sync-and-the-token-is-not-valid-yet/
 published: true
 post_date: 2019-09-02 10:51:18
 ---
