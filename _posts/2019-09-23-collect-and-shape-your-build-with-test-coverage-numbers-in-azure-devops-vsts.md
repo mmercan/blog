@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -228,7 +228,7 @@ ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AW2LcrjNeWHkXTI8--hG</pre>
 <!-- /wp:syntaxhighlighter/code -->
 
 <!-- wp:paragraph -->
-<p>PowerShell simply try to access the <strong>report-task.txt</strong> file read ceTaskUrl and make a WebRequest to the url with Authorization header. Result of this request is a json with the field name <strong>analysisId</strong>.<br>We make a second WebRequest to<strong> /api/qualitygates/project_status?analysisId=$analysisId</strong> with filling the  $analysisId from the first WebRequest</p>
+<p>PowerShell simply try to access the <strong>report-task.txt</strong> file read ceTaskUrl and make a WebRequest to the url with Authorization header. Result of this request is a json with the field name <strong>analysisId</strong>.<br>We make a second WebRequest to<strong> /api/qualitygates/project_status?analysisId=</strong>$Response.task.analysisId with adding the <strong>analysisId </strong>from the first WebRequest<br>Second  WebRequest also result with a JSON response, if projectStatus.status is "OK" or "NONE" we accept this as a success any other result will cause a double error Write-Error and Write-Output "##vso[task.complete result=Failed;]" this is overkill if you are using the vsts PowerShell task as it translate  Write-Error  to a task fail too.</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:syntaxhighlighter/code {"language":"powershell","lineNumbers":false,"makeURLsClickable":false} -->
@@ -305,17 +305,11 @@ if ([System.IO.File]::Exists($SonarTaskFile)) {
     $Response = Invoke-WebRequest -Uri $CeTaskUrl -Headers $Headers -UseBasicParsing | ConvertFrom-Json
     Write-Host "analysisId : " $Response.task.analysisId
 
-    # Start-Sleep -s 15
-    GetStatus -ServerUrl $ServerUrl -analysisId $Response.task.analysisId
-        
-
+    Start-Sleep -s 15
+    GetStatus -ServerUrl $ServerUrl -analysisId $Response.task.analysisId    
 }
 else {
     GetStatus -ServerUrl $backupServerUrl -projectkey $backupProjectkey 
 
 }</pre>
 <!-- /wp:syntaxhighlighter/code -->
-
-<!-- wp:paragraph -->
-<p>4</p>
-<!-- /wp:paragraph -->
