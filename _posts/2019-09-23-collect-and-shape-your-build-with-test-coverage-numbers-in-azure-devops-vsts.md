@@ -7,7 +7,7 @@ author: mmercan
 post_excerpt: ""
 layout: post
 permalink: >
-  http://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
+  https://mmercan.azurewebsites.net/2019/09/23/collect-and-shape-your-build-with-test-coverage-numbers-in-azure-devops-vsts/
 published: true
 post_date: 2019-09-23 00:51:01
 ---
@@ -20,7 +20,7 @@ post_date: 2019-09-23 00:51:01
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p>The usage of dotnet cli is skyrocketed in our pipelines. it is easy and can bu run everywhere including docker images.<br>You can simply add <a rel="noreferrer noopener" aria-label="dotnet-reportgenerator (opens in a new tab)" href="https://danielpalme.github.io/ReportGenerator/" target="_blank">dotnet-reportgenerator</a> to summarize the result and read the  "Line coverage" <br>string. The line should be like  <strong>Line coverage: 68.1%</strong>, just extract the number and compare with the expected percentage. If it is lower Write-Error, VSTS will catch this as an error and fails the build, otherwise Write-Host to let people know the result. (Bash file is not the best and if you have a better version please share in a comment)<br>this technique can be used anywhere you can add PowerShell or Bash task to your VSTS build and use this or simply add this to your docker image build </p>
+<p>The usage of dotnet cli is skyrocketed in our pipelines. it is easy and can bu run everywhere including docker images.<br>You can simply add <a rel="noreferrer noopener" aria-label="dotnet-reportgenerator (opens in a new tab)" href="https://danielpalme.github.io/ReportGenerator/" target="_blank">dotnet-reportgenerator</a> to summarize the result and read the  "Line coverage" <br>string. The line should be like  <strong>Line coverage: 68.1%</strong>, just extract the number and compare it with the expected percentage. If it is lower Write-Error, VSTS will catch this as an error and fails the build, otherwise Write-Host to let people know the result. (Bash file is not the best and if you have a better version please share in a comment)<br>this technique can be used anywhere you can add PowerShell or Bash task to your VSTS build and use this or simply add this to your docker image build </p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
