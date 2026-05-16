@@ -4,6 +4,7 @@ description: 'My first post on the new blog.'
 pubDate: '2026-05-16'
 tags: ['general']
 draft: false
+date: '2026-01-15'
 ---
 
 Welcome to my blog! This is my first post.
