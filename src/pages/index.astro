@@ -1,0 +1,153 @@
+---
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="My blog" />
+    <title>My Blog</title>
+    <style>
+      :root {
+        --color-text: #1a1a1a;
+        --color-muted: #666;
+        --color-accent: #6c4bf4;
+        --color-bg: #fff;
+        --color-border: #e5e5e5;
+        --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        --font-serif: Georgia, 'Times New Roman', serif;
+      }
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      body {
+        font-family: var(--font-sans);
+        color: var(--color-text);
+        background: var(--color-bg);
+        line-height: 1.6;
+      }
+
+      .container { max-width: 720px; margin: 0 auto; padding: 0 1.5rem; }
+
+      header {
+        border-bottom: 1px solid var(--color-border);
+        padding: 1.25rem 0;
+        margin-bottom: 4rem;
+      }
+
+      header nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .site-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: var(--color-text);
+        text-decoration: none;
+      }
+
+      .hero { margin-bottom: 4rem; }
+      .hero h1 { font-size: 2.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.75rem; }
+      .hero p { font-size: 1.1rem; color: var(--color-muted); font-family: var(--font-serif); }
+
+      .post-list { display: flex; flex-direction: column; gap: 2.5rem; }
+
+      .post-item a { text-decoration: none; color: inherit; }
+      .post-item:hover h2 { color: var(--color-accent); }
+
+      .post-item h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        transition: color 0.15s;
+        margin-bottom: 0.4rem;
+      }
+
+      .post-meta {
+        font-size: 0.85rem;
+        color: var(--color-muted);
+        margin-bottom: 0.6rem;
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .post-description {
+        font-family: var(--font-serif);
+        color: #444;
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      .tags { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.6rem; }
+      .tag {
+        background: #f3f0ff;
+        color: var(--color-accent);
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.15rem 0.55rem;
+        border-radius: 99px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      footer {
+        margin-top: 5rem;
+        padding: 2rem 0;
+        border-top: 1px solid var(--color-border);
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--color-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav>
+          <a href="/" class="site-title">My Blog</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <h1>Hi, I'm [Your Name]</h1>
+        <p>I write about things I find interesting — projects, ideas, and whatever's on my mind.</p>
+      </section>
+
+      <section class="post-list">
+        {posts.map(post => (
+          <article class="post-item">
+            <a href={`/blog/${post.slug}`}>
+              <h2>{post.data.title}</h2>
+              <div class="post-meta">
+                <time datetime={post.data.pubDate.toISOString()}>
+                  {post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+                </time>
+              </div>
+              <p class="post-description">{post.data.description}</p>
+              {post.data.tags.length > 0 && (
+                <div class="tags">
+                  {post.data.tags.map(tag => <span class="tag">{tag}</span>)}
+                </div>
+              )}
+            </a>
+          </article>
+        ))}
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>© {new Date().getFullYear()} · Built with Astro</p>
+      </div>
+    </footer>
+  </body>
+</html>
