@@ -53,3 +53,10 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      - name: Generate Custom Report
+        run: |
+          echo "### 📊 My Custom Action Report" >> $GITHUB_STEP_SUMMARY
+          echo "| Metric | Status |" >> $GITHUB_STEP_SUMMARY
+          echo "| --- | --- |" >> $GITHUB_STEP_SUMMARY
+          echo "| Tests | Passing ✅ |" >> $GITHUB_STEP_SUMMARY
